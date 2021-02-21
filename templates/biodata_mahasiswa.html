@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title>Biodata Mahasiswa UZ</title>
+    </head>
+    <body>
+        <h2>Biodata Mahasiswa Universitas Zimbabwe</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nama</th>
+                    <th>Kelas</th>
+                    <th>NPM</th>
+                    <th>Umur</th>
+                    <th>Jenis Kelamin</th>
+                    <th>Cita-cita</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for mahasiswa in list_mahasiswa %}
+                <tr>
+                    <td>{{ mahasiswa.nama }}</td>
+                    <td>{{ mahasiswa.kelas }}</td>
+                    <td>{{ mahasiswa.npm }}</td>
+                    <td>{{ mahasiswa.umur }}</td>
+                    <td>{{ mahasiswa.jenis_kelamin }}</td>
+                    <td>{{ mahasiswa.cita_cita }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <br>
+        <form method="POST">
+            {% csrf_token %}
+            <label for="nama">Nama :</label>
+            <input type="text" name="nama">
+            <br>
+            <label for="kelas">kelas :</label>
+            <input type="text" name="kelas">
+            <br>
+            <label for="npm">npm :</label>
+            <input type="text" name="npm">
+            <br>
+            <label for="umur">umur :</label>
+            <input type="text" name="umur">
+            <br>
+            <label for="jeniskelamin">jenis kelamin :</label>
+            <select name="jeniskelamin" id="">
+                <option value="Laki-laki">Laki-laki</option>
+                <option value="Perempuan">Perempuan</option>
+            </select>
+            <br>
+            <label for="cita">cita-cita :</label>
+            <textarea name="cita" id="cita" cols="30" rows="10"></textarea>
+            <br>
+            <button type="submit">Kirim</button>
+        </form>
+    </body>
+</html>
