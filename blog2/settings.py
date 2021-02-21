@@ -26,7 +26,7 @@ SECRET_KEY = 'le9+zhn@mmfqyd1a7ih^45*!16$1rnf^rerttd2=wcay$hu+=s'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['firdha.shashinsat.my.id']
 
 
 # Application definition
