@@ -15,11 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from mainapp.views import BiodataMahasiswa, BiodataMahasiswaAPI
+from mainapp.views import BiodataMahasiswa, BiodataMahasiswaAPI, MahasiswaCreate, MahasiswaDelete, MahasiswaUpdate
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', BiodataMahasiswa.as_view(), name="home"),
     path('mahasiswa/', BiodataMahasiswaAPI.as_view()),
+    path('tambah_mahasiswa/', MahasiswaCreate.as_view(), name="tambah_mahasiswa"),
+    path('<pk>/update_mahasiswa/', MahasiswaUpdate.as_view(), name="update_mahasiswa"),
+    path('<pk>/delete_mahasiswa/', MahasiswaDelete.as_view(), name="delete_mahasiswa"),
 
 ]

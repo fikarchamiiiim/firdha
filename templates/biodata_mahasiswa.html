@@ -14,6 +14,7 @@
                     <th>Umur</th>
                     <th>Jenis Kelamin</th>
                     <th>Cita-cita</th>
+                    <th>Aksi</th>
                 </tr>
             </thead>
             <tbody>
@@ -25,6 +26,10 @@
                     <td>{{ mahasiswa.umur }}</td>
                     <td>{{ mahasiswa.jenis_kelamin }}</td>
                     <td>{{ mahasiswa.cita_cita }}</td>
+                    <td>
+                        <a href="{% url 'update_mahasiswa' mahasiswa.id %}">Update</a>
+                        <a href="{% url 'delete_mahasiswa' mahasiswa.id %}">Delete</a>
+                    </td>
                 </tr>
                 {% endfor %}
             </tbody>

@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 
@@ -14,3 +15,6 @@ class Mahasiswa(models.Model):
     umur = models.IntegerField()
     cita_cita = models.TextField()
     jenis_kelamin = models.CharField(max_length=50, choices=JENIS_KELAMIN)
+
+    def get_absolute_url(self):
+        return reverse("home")
