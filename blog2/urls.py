@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from mainapp.views import BiodataMahasiswa, BiodataMahasiswaAPI, MahasiswaCreate, MahasiswaDelete, MahasiswaUpdate
+from mainapp.views import BiodataMahasiswa, BiodataMahasiswaAPI, MahasiswaCreate, MahasiswaDelete, MahasiswaUpdate, PakaiTemplate
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,5 +24,6 @@ urlpatterns = [
     path('tambah_mahasiswa/', MahasiswaCreate.as_view(), name="tambah_mahasiswa"),
     path('<pk>/update_mahasiswa/', MahasiswaUpdate.as_view(), name="update_mahasiswa"),
     path('<pk>/delete_mahasiswa/', MahasiswaDelete.as_view(), name="delete_mahasiswa"),
+    path('pakaiTemplate/', PakaiTemplate.as_view(), name='pakai_template')
 
 ]

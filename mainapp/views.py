@@ -55,3 +55,6 @@ class BiodataMahasiswaAPI(APIView):
         list_mahasiswa_api = Mahasiswa.objects.all()
         serializer = MahasiswaSerializers(list_mahasiswa_api, many=True)
         return Response(serializer.data)
+
+class PakaiTemplate(TemplateView):
+    template_name = 'index.html'
