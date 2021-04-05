@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="nama">Nama :</label>
+        <input type="text" name="nama" value="{{ data_mahasiswa.nama }}">
+        <br>
+        <label for="kelas">kelas :</label>
+        <input type="text" name="kelas" value="{{ data_mahasiswa.kelas }}">
+        <br>
+        <label for="npm">npm :</label>
+        <input type="text" name="npm" value="{{ data_mahasiswa.npm }}">
+        <br>
+        <label for="umur">umur :</label>
+        <input type="text" name="umur" value="{{ data_mahasiswa.umur }}">
+        <br>
+        <label for="jeniskelamin">jenis kelamin :</label>
+        <select name="jeniskelamin" id="" value="{{ data_mahasiswa.jenis_kelamin }}">
+            <option value="Laki-laki">Laki-laki</option>
+            <option value="Perempuan">Perempuan</option>
+        </select>
+        <br>
+        <label for="cita">cita-cita :</label>
+        <textarea name="cita" id="cita" cols="30" rows="10">{{ data_mahasiswa.cita_cita }}</textarea>
+        <br>
+        <button type="submit">Kirim</button>
+    </form>
+</body>
+</html>

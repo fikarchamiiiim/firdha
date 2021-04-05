@@ -18,3 +18,6 @@ class Mahasiswa(models.Model):
 
     def get_absolute_url(self):
         return reverse("home")
+
+    def __str__(self):
+        return self.nama
